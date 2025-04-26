@@ -1,0 +1,109 @@
+.text-white{
+    color: #ffffff;
+}
+.text-black{
+    color: #000000;
+}
+.text-blue{
+    color: #246aff;
+}
+.text-grey{
+    color: #373737;
+}
+.text-lightgrey{
+    color: #a8a8a8;
+}
+.text-red{
+    color: #b40303;
+}
+.text-xx{
+    font-size: 35px;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-xl{
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+} 
+.text-x{
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-l{
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-ll{
+    font-size: 18px; 
+    font-family: 'Open Sans', sans-serif;
+}
+.text-m{
+    font-size: 17px;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-r{
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-s{
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-xs{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-xxs{
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-extrabold{
+    font-weight: 900;
+}
+.text-bold{
+    font-weight: 600;
+}
+.text-light{
+    font-weight: 400;
+}
+.text-underline{
+    border-bottom: 1px solid #434343;
+    padding-bottom: 0.5px;
+    transition: all .5s ease;
+}
+.text-underline:hover{
+    opacity: 0.5;
+    transition: all .5s ease;
+}
+.text-pad-s{
+    padding: 0 2px;
+}
+.text-margin-m{
+    margin-bottom: 10px;
+}
+.text-cursor{
+    cursor: pointer;
+}
+@media screen and (min-width:320px) and (max-width:767px) {
+    .text-m{
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .text-x{
+        font-size: 23px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .text-ll{
+        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+@media screen and (min-width:1024px) and (max-width:1439px){
+    .text-x{
+        font-size: 24px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .text-l{
+        font-size: 17px;
+        font-family: 'Open Sans', sans-serif;
+    }
+}

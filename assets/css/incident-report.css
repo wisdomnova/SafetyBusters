@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fff;
+}
+.inci-rep-cover{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.inci-rep-tab{
+    width: 100%;
+    height: auto;
+    background-color: #e6e6e6;
+}
+.inci-rep-top{
+    width: 100%;
+    height: 90px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #373737;
+}
+.inci-rep-top-img{
+    width: 120px;
+    height: 100%;
+}
+.inci-rep-big{
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.inci-rep-big-hr{
+    background-color: #373737;
+    width: 80%;
+    height: 7px;
+    border: none;
+    margin: 30px 0;
+}
+.inci-rep-form-tab{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.inci-rep-form-tab-main{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: transparent;
+}
+.inci-rep-form-tab-main-table{
+    width: 100%;
+    border: 1px solid #373737;
+    margin: 20px 0;
+}
+.inci-rep-form-tab-main-tree{
+    width: 100%;
+}
+.inci-rep-form-tab-main-thead{
+    width: auto;
+    text-align: left;
+    padding: 9px 20px;
+}
+.inci-rep-form-tab-main-thead-long{
+    width: auto;
+    height: 220px;
+    text-align: left;
+    padding: 9px 20px;
+} 
+.inci-rep-form-tab-main-img-view{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inci-rep-form-tab-main-img-tab{
+    width: 80%;
+    border: 1px solid #373737;
+    padding: 20px 0;
+}
+.inci-rep-form-tab-main-img{
+    width: 49%;
+    height: 400px;
+    margin: 10px 5px;
+}

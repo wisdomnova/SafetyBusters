@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to your account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/user-style.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/user-text.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/user-loading.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/latest/normalize.css"/>
+</head>
+<body>
+    <div class="app-img-container">
+        <img src="../assets/images/safetybusters.png" alt="GHS Labelling" class="app-img"/>
+    </div>
+    <div class="app-container">
+        <div class="app-sub-container">
+            <div class="app-sub-col-left">
+                <span class="text-x text-black text-bold">Log In</span>
+            </div>
+            <div class="app-sub-col-center-err" id="app-top-err-tab" style="display: none;">
+                <ion-icon name="alert-circle" class="text-x text-red text-bold text-pad-s"></ion-icon>
+                <span class="text-r text-red text-light">This account doesn't exist</span>
+            </div>
+            <div class="app-divider-medium"></div>
+            <div class="app-sub-col">
+                <div class="app-sub-inp-div" id="app-sub-inp-div">
+                    <ion-icon name="mail-outline" class="app-sub-icon"></ion-icon>
+                    <input placeholder="Email Address" class="app-sub-inp text-m" type="email" id="app-mail-inp" autocomplete="off"/>
+                </div>
+                <div class="app-sub-col-left-err" id="app-sub-err-tab" style="display: none;">
+                    <ion-icon name="alert-circle" class="text-l text-red text-bold text-pad-s"></ion-icon>
+                    <span class="text-s text-red text-light" id="app-sub-err-tab-span">Invalid Email Address</span>
+                </div>
+            </div>
+            <div class="app-sub-col">
+                <div class="app-sub-inp-div" id="app-sub-inp-div">
+                    <ion-icon name="lock-closed-outline" class="app-sub-icon"></ion-icon>
+                    <input placeholder="Password" class="app-sub-inp text-m" type="password" id="app-pass-inp" autocomplete="off"/>
+                    <ion-icon name="eye-outline" class="app-icon-active" id="app-show-icon"></ion-icon>
+                </div>
+                <div class="app-sub-col-left-err" id="app-sub-err-tab" style="display: none;">
+                    <ion-icon name="alert-circle" class="text-l text-red text-bold text-pad-s"></ion-icon>
+                    <span class="text-s text-red text-light" id="app-sub-err-tab-span">Invalid Password</span>
+                </div>
+            </div>
+            <div class="app-sub-col">
+                <div class="app-sub-btn-div">
+                    <button class="app-sub-btn text-m" id="app-sub-btn">Continue</button>
+                </div>
+            </div>
+            <div class="app-sub-col-left">
+                <span class="app-sub-attract text-grey text-r">New here?&nbsp;<a href="./signup.html" target="_top" class="text-grey text-r text-underline">Sign up</a></span>
+            </div>
+            <div class="app-sub-col-center-flex">
+                <div class="app-sub-col-center-flex-item">
+                    <ion-icon name="logo-google" class="item-google"></ion-icon>
+                    <span class="text-grey text-r">Sign in With Google</span>
+                </div>
+                <div class="app-sub-col-center-flex-item">
+                    <ion-icon name="logo-facebook" class="item-facebook"></ion-icon>
+                    <span class="text-grey text-r">Sign in With Facebook</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/e45675.js" type="text/javascript"></script>
+    <script src="../assets/js/e23887.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

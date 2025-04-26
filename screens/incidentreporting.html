@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Incident Reporting Software</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/user-text.css" type="text/css">
+        <link rel="stylesheet" href="../assets/css/user-dashboard.css" type="text/css">
+        <link rel="stylesheet" href="../assets/css/user-dashboard-popup.css" type="text/css">
+        <link rel="stylesheet" href="../assets/css/incident-dashboard.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/latest/normalize.css"/>
+    </head>
+<body>
+    <div class="app-dashboard-cover">
+        <div class="app-dashboard-popup-cover" id="app-dashboard-nav-item" style="display: none;" data-clicked="off">
+            <div class="app-dashboard-tab-nav-cover-base">
+                <!-- <a href="#" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">Home<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a> -->
+                <a href="#" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">Incident Reporting<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a>
+                <!-- <a href="http://localhost/safetybusters/screens/reports.html" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">Reports<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a> -->
+                <!-- <a href="#" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">Audits/Inspections<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a>
+                <a href="#" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">Safety Observations<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a>
+                <a href="#" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">Key Performance Indicators-Charts<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a> -->
+                <a href="http://localhost/safetybusters/screens/chemicallabelling.html" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">Chemical Labelling Tool<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a>
+                <!-- <a href="#" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">SDS<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a>
+                <a href="#" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">Safety Checklist Templates + Builder<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a>
+                <a href="#" target="_top" class="app-dashboard-tab-nav-cover-base-link text-ll text-black">OSHA Standards Quick Lookup Tool<ion-icon name="caret-forward-outline" class="app-dashboard-tab-nav-cover-base-link-arr"></ion-icon></a> -->
+            </div>
+        </div>
+        <div class="app-dashboard-popup-cover" id="app-dashboard-photo-item" style="display: none;">
+            <div class="inci-dashboard-photo-cover">
+                <div class="inci-dashboard-photo-top">
+                    <span class="text-m text-black text-bold">Images</span>
+                    <span style="cursor: pointer;" id="inci-photos-close-btn">
+                        <ion-icon name="close-outline" class="text-black text-x"></ion-icon>
+                    </span>
+                </div>
+                <div class="inci-dashboard-photo-view" id="inci-dashboard-photo-view"></div>
+            </div>
+        </div>
+        <div class="inci-report-main inci-report-main-visible" id="inci-report-initial">
+            <div class="inci-dashboard-tab">
+                <div class="app-dashboard-tab-icon-cover">
+                    <img src="../assets/images/safetybusters.png" alt=""> 
+                </div>
+                <label id="app-dashboard-nav-ham">
+                    <div class="app-dashboard-tab-ham-cover">
+                        <div class="app-dashboard-tab-ham-cover-base"></div>
+                        <input type="checkbox" class="app-dashboard-tab-ham-cover-base-inp" id="app-dashboard-tab-ham-cover-base-inp"/>
+                        <div class="app-dashboard-tab-ham-cover-stroke app-dashboard-tab-ham-cover-stroke-30"></div>
+                        <div class="app-dashboard-tab-ham-cover-stroke app-dashboard-tab-ham-cover-stroke-50"></div>
+                        <div class="app-dashboard-tab-ham-cover-stroke app-dashboard-tab-ham-cover-stroke-51"></div>
+                    </div>
+                </label>
+                <div class="inci-header">
+                    <span class="text-x text-black text-bold">Incident Reporting</span>
+                </div>
+                <div class="inci-tab-cover">
+                    <div class="inci-tab-cover-split-left">
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-black text-bold inci-tab-inp-col-span">* Information about the employee</span>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Full name of employee</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Name of employees supervisor</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Street address</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">City</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">State</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Zip/Postal code</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Gender</span>
+                            <div class="inci-tab-inp-row inci-tab-inp-row-valid" id="inci-inp-val-radio" data-required="true">
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="gender" id="signal-inp" value="Male" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Male</span>
+                                    </label>
+                                </div>
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="gender" id="signal-inp" value="Female" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Female</span>
+                                    </label>
+                                </div>
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="gender" id="signal-inp" value="Other" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Other</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Date hired</span>
+                            <input type="date" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Years with company</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                    </div>
+                    <div class="inci-tab-cover-split-right">
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-black text-bold inci-tab-inp-col-span">* Information about the physician/health care professional</span>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Name of physician</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-black text-bold inci-tab-inp-col-span">If treatment was given, where was it given?</span>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Facility</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Street</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">City</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Zip/Postal code</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Was employee treated in emergency room?</span>
+                            <div class="inci-tab-inp-row inci-tab-inp-row-valid" id="inci-inp-val-radio" data-required="true">
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="emergency" id="signal-inp" value="Yes" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Yes</span>
+                                    </label>
+                                </div>
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="emergency" id="signal-inp" value="No" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Was employee hospitalized overnight as an in-patient?</span>
+                            <div class="inci-tab-inp-row inci-tab-inp-row-valid" id="inci-inp-val-radio" data-required="true">
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="hospitalized" id="signal-inp" value="Yes" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Yes</span>
+                                    </label>
+                                </div>
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="hospitalized" id="signal-inp" value="No" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inci-upload-cover">
+                <div class="inci-upload-div-right-hidden"></div>
+                <div class="inci-upload-div-right">
+                    <button class="inci-next-btn text-m" id="inci-initial-next-btn">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="inci-report-main inci-report-main-hidden" id="inci-report-final">
+            <div class="inci-dashboard-tab">
+                <div class="app-dashboard-tab-icon-cover">
+                    <img src="../assets/images/safetybusters.png" alt="">
+                </div>
+                <label id="app-dashboard-nav-ham">
+                    <div class="app-dashboard-tab-ham-cover">
+                        <div class="app-dashboard-tab-ham-cover-base"></div>
+                        <input type="checkbox" class="app-dashboard-tab-ham-cover-base-inp" id="app-dashboard-tab-ham-cover-base-inp"/>
+                        <div class="app-dashboard-tab-ham-cover-stroke app-dashboard-tab-ham-cover-stroke-30"></div>
+                        <div class="app-dashboard-tab-ham-cover-stroke app-dashboard-tab-ham-cover-stroke-50"></div>
+                        <div class="app-dashboard-tab-ham-cover-stroke app-dashboard-tab-ham-cover-stroke-51"></div>
+                    </div>
+                </label>
+                <div class="inci-header">
+                    <span class="text-x text-black text-bold">Incident Reporting</span>
+                </div>
+                <div class="inci-tab-cover">
+                    <div class="inci-tab-cover-split-left">
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-black text-bold inci-tab-inp-col-span">* Information about the case</span>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Exact location of event</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Case number from OSHA Log</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Date of injury or illness</span>
+                            <input type="date" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Time employee began work</span>
+                            <input type="time" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Time of event</span>
+                            <input type="time" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Years of experience in specific task</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">What part of the body was injured?</span>
+                            <select class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true">
+                                <option value=""></option>
+                                <option value="Head">Head</option>
+                                <option value="Body System">Body System</option>
+                                <option value="Neck">Neck</option>
+                                <option value="Shoulder">Shoulder</option>
+                                <option value="Arm">Arm</option>
+                                <option value="Leg">Leg</option>
+                                <option value="Head">Head</option>
+                                <option value="Hand">Hand</option>
+                                <option value="Finger">Finger</option>
+                                <option value="Knee">Knee</option>
+                                <option value="Lower Extremities">Lower Extremities</option>
+                                <option value="Upper Extremities">Upper Extremities</option>
+                                <option value="Foot">Foot</option>
+                                <option value="Ankle">Ankle</option>
+                                <option value="Trunk">Trunk</option>
+                                <option value="Back">Back</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">What was the nature of the injury?</span>
+                            <select class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true">
+                                <option value=""></option>
+                                <option value="All Other">All Other</option>
+                                <option value="Sprains, Strains, Tears">Sprains, Strains, Tears</option>
+                                <option value="Soreness, Pain">Soreness, Pain</option>
+                                <option value="Fractures">Fractures</option>
+                                <option value="Cuts, Lacerations, Punctures">Cuts, Lacerations, Punctures</option>
+                                <option value="Bruises, Contusions">Bruises, Contusions</option>
+                                <option value="Multiple Traumatic Injuries">Multiple Traumatic Injuries</option>
+                                <option value="Punctures (except gunshots)">Punctures (except gunshots)</option>
+                                <option value="Heat (thermal) burns">Heat (thermal) burns</option>
+                                <option value="Amputations">Amputations</option>
+                                <option value="Carpal Tunnel Syndrome">Carpal Tunnel Syndrome</option>
+                                <option value="Chemical Burns">Chemical Burns</option>
+                                <option value="Multiple Fractures">Multiple Fractures</option>
+                                <option value="Tendonitis">Tendonitis</option>
+                            </select>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">What equipment or tools were being used?</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">What object/substance harmed the employee? </span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">What treatment(s) did the employee receive?</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="true"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Witnesses name (if any)</span>
+                            <input type="text" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                    </div>
+                    <div class="inci-tab-cover-split-right">
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-black text-bold inci-tab-inp-col-span">* Information/corrective actions about the case</span>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Is injury an OSHA recordable?</span>
+                            <div class="inci-tab-inp-row inci-tab-inp-row-valid" id="inci-inp-val-radio" data-required="true">
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="osha" id="signal-inp" value="Yes" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Yes</span>
+                                    </label>
+                                </div>
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="osha" id="signal-inp" value="No" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">No</span>
+                                    </label>
+                                </div>
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="osha" id="signal-inp" value="Unsure" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Unsure</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Have all related JSA's and training been completed and documented?</span>
+                            <div class="inci-tab-inp-row inci-tab-inp-row-valid" id="inci-inp-val-radio" data-required="true">
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="jsa" id="signal-inp" value="Yes" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Yes</span>
+                                    </label>
+                                </div>
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="jsa" id="signal-inp" value="No" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Were proper procedures being followed at the time, including all required PPE?</span>
+                            <div class="inci-tab-inp-row inci-tab-inp-row-valid" id="inci-inp-val-radio" data-required="true">
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="procedures" id="signal-inp" value="Yes" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">Yes</span>
+                                    </label>
+                                </div>
+                                <div class="inci-tab-inp-single-check-parent">
+                                    <label class="inci-tab-inp-single-check-parent-label">
+                                        <input type="radio" name="procedures" id="signal-inp" value="No" class="inci-checkbox-true">
+                                        <span class="inci-checkbox-cover">
+                                            <span class="inci-checkbox-item"></span>
+                                        </span>
+                                        <span class="text-m text-grey">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">If not, explain what and why not;</span>
+                            <textarea class="inci-tab-inp-col-area inci-tab-inp-col-box-valid text-m" value="" data-required="false"></textarea>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-bold text-blck inci-tab-inp-col-span">If equipment and/or materials were involved;</span>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-bold text-grey inci-tab-inp-col-span">What type(s), length(s), weight(s), no of pieces e.t.c</span>
+                            <textarea class="inci-tab-inp-col-area inci-tab-inp-col-box-valid text-m" value="" data-required="false"></textarea>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">What was the employee doing just before the incident occurred?</span>
+                            <textarea class="inci-tab-inp-col-area inci-tab-inp-col-box-valid text-m" value="" data-required="true"></textarea>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">Describe fully how the accident happened including any contributing factors</span>
+                            <textarea class="inci-tab-inp-col-area inci-tab-inp-col-box-valid text-m" value="" data-required="true"></textarea>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-bold text-grey inci-tab-inp-col-span">If the employee died, at what date did death occur?</span>
+                            <input type="date" class="inci-tab-inp-col-box inci-tab-inp-col-box-valid text-m" value="" data-required="false"/>
+                        </div>
+                        <div class="inci-tab-inp-col">
+                            <span class="text-m text-grey text-bold inci-tab-inp-col-span">What did you do to prevent re-occurrence of injury?</span>
+                            <textarea class="inci-tab-inp-col-area inci-tab-inp-col-box-valid text-m" value="" data-required="true"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inci-upload-cover">
+                <div class="inci-upload-div-left">
+                    <div class="inci-upload-div-left-init">
+                        <label class="inci-upload-div-left-label">
+                            <input type="file" accept="image/png,image/jpg" class="inci-upload-inp" id="inci-upload-inp" multiple/>
+                            <ion-icon name="add-sharp" class="inci-upload-inp-icon"></ion-icon>
+                            <span class="text-white text-s text-bold">Add Injury Photo</span>
+                        </label>
+                    </div>
+                    <div class="inci-upload-div-left-count" id="inci-photos-view-btn" style="cursor: pointer;">
+                        <span class="text-black text-s text-bold" id="inci-upload-inp-len">0 image file(s)</span>
+                    </div>
+                </div>
+                <div class="inci-upload-div-right">
+                    <button class="inci-prev-btn text-m" id="inci-final-back-btn">Back</button>&nbsp;&nbsp;
+                    <button class="inci-next-btn text-m" id="inci-final-next-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/safetyr466743.js" type="text/javascript"></script>
+    <script src="../assets/js/util67634.js" type="text/javascript"></script>
+    <script src="../assets/js/i43485.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-image: url(../images/mesh.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.app-img-container{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 5px 10px;
+    top: 0;
+    left: 0;
+}
+.app-img{
+    width: 165px;
+    height: 115px;
+}
+.app-divider-medium{
+    width: 100%;
+    height: 20px;
+}
+.app-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.098);
+}
+.app-sub-container{
+    width: 500px;
+    height: fit-content;
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 45px;
+}
+.app-sub-col{
+    width: 100%;
+    height: fit-content;
+    margin: 15px 0;
+}
+.app-sub-col-left{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.app-sub-col-left-err{
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+}
+.app-sub-col-center{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-sub-col-center-err{
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd0d8;
+}
+.app-sub-col-center-flex{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.app-sub-col-center-flex-item{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.app-sub-col-center-flex-item:hover{
+    background-color: #e5e5e5;
+    transition: all .5s ease;
+}
+.item-google{
+    padding: 0 10px;
+    font-size: 25px;
+    color: #DB4437;
+}
+.item-facebook{
+    padding: 0 10px;
+    font-size: 25px;
+    color: #4267B2;
+}
+.app-sub-inp-div{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+}
+.app-sub-inp-err{
+    border: 1px solid #b40303;
+}
+.app-sub-btn-div{
+    width: 100%;
+    height: 50px;
+    display: block;
+    align-items: center;
+    background-color: transparent;
+    padding: 0px;
+}
+.app-sub-icon{
+    font-size: 25px;
+    padding: 0 10px;
+}
+.app-icon-active{
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 25px;
+    padding: 5px 8px;
+    transition: all .5s ease;
+}
+.app-icon-active:hover{
+    background-color: #dfdfdf;
+    transition: all .5s ease;
+}
+.app-sub-btn{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: #025656;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: all .5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-sub-btn:hover{
+    background-color: #016868;
+    transition: all .5s ease;
+}
+.app-sub-inp{
+    flex: 1;
+    outline: none;
+    border: none;
+    height: 100%;
+    background-color: transparent;
+}
+.app-loader-icon{
+    color: #fff;
+    font-size: 30px;
+    animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@media screen and (max-width:767px){
+    .app-sub-container{
+        width: 95%;
+        height: fit-content;
+        padding: 30px 20px;
+    }
+}

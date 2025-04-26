@@ -1,0 +1,435 @@
+.inci-report-main{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+.inci-report-main-visible{
+    display: block;
+}
+.inci-report-main-hidden{
+    display: none;
+}
+.inci-report-main-fade-in{
+    animation: fadeIn 1s ease-in-out 1;
+    -webkit-animation: fadeIn 1s ease-in-out 1;
+}
+.inci-dashboard-tab{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 130px 13% 0 13%;
+    background-color: rgba(0,0,0,0.078);
+    position: relative;
+    overflow: hidden;
+}
+.inci-header{
+    top: 0;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    background-color: rgba(0,0,0,0.016);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 0;
+}
+.inci-tab-cover{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: transparent;
+    overflow: hidden;
+}
+.inci-tab-cover-split-left{
+    width: 42%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+    overflow: auto;
+}
+.inci-tab-cover-split-right{
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+    overflow: auto;
+}
+.inci-tab-inp-col{
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    background-color: transparent;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+.inci-tab-inp-row{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 5px;
+    background-color: transparent;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px;
+}
+.inci-tab-inp-row-valid{
+    border: 1px solid transparent;
+}
+.inci-tab-inp-row-invalid{
+    border: 1px solid #b40303;
+}
+.inci-tab-inp-col-span{
+    margin: 5px 0;
+    display: block;
+}
+.inci-tab-inp-col-box{
+    width: 70%;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    padding-left: 20px;
+    margin: 5px 0;
+}
+.inci-tab-inp-col-box-valid{
+    border: 1px solid #cccccc;
+}
+.inci-tab-inp-col-box-invalid{
+    border: 1px solid #b40303;
+}
+.inci-tab-inp-col-area{
+    width: 70%;
+    height: 130px;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-left: 20px;
+    margin: 5px 0;
+    resize: none;
+}
+.inci-tab-inp-single-check-parent{
+    width: fit-content;
+    height: fit-content;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.inci-tab-inp-single-check-parent-label{
+    display: flex;
+    flex-direction: row;
+}
+.inci-checkbox-true{
+    display: none;
+}
+.inci-checkbox-true:checked + .inci-checkbox-cover .inci-checkbox-item{
+    background-color: #025656;
+}
+.inci-checkbox-cover{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #025656;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inci-checkbox-item{
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.inci-upload-cover{
+    width: 100%;
+    height: 55px;
+    background-color: #dbdbdb;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.inci-upload-div-left{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.inci-upload-div-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2px 5px;
+    margin: 5px 0;
+}
+.inci-upload-div-right-hidden{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2px 5px;
+    margin: 5px 0;
+    visibility: hidden;
+}
+.inci-upload-div-left-init{
+    width: 170px;
+    height: 100%;
+    background-color: #012a2a;
+}
+.inci-upload-div-left-count{
+    width: 150px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inci-upload-div-left-label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.inci-upload-inp{
+    display: none;
+}
+.inci-upload-inp-icon{
+    font-size: 20px;
+    color: #fff;
+    margin-right: 5px;
+}
+.inci-prev-btn{
+    width: 200px;
+    height: 100%;
+    outline: none;
+    border: none;
+    color: #025656;
+    background-color: #eaeaea;
+    border: 1px solid #025656;
+    border-radius: 10px;
+    transition: all .5s ease;
+}
+.inci-next-btn{
+    width: 200px;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: #025656;
+    color: #ffffff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    transition: all .5s ease;
+}
+.inci-next-btn:hover{
+    transition: all .5s ease;
+    background-color: #037171;
+}
+.inci-prev-btn:hover{
+    transition: all .5s ease;
+    background-color: #c8c8c8;
+}
+
+.inci-dashboard-photo-cover{
+    max-width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.inci-dashboard-photo-top{
+    width: 100%;
+    height: 60px;
+    background-color: #dfdfdf;
+    flex-grow: 0;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inci-dashboard-photo-view{
+    flex-grow: 1;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding: 10px 20px;
+}
+.inci-dashboard-photo-cors{
+    width: 450px;
+    height: 100%;
+    background-color: transparent;
+    margin: 0 10px;
+    flex: 0 0 auto;
+    position: relative;
+}
+.inci-dashboard-photo-cors-abs{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 30;
+    background-color: #eeeeee;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.inci-dashboard-photo-cors-abs:hover{
+    background-color: #cacaca;
+    transition: all .3s ease;
+}
+.inci-dashboard-photo-cors-icon{
+    font-size: 25px;
+}
+.inci-dashboard-photo-cors-img{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@media screen and (max-width:1023px) {
+    .inci-dashboard-tab{
+        padding: 150px 5% 0 5%;
+    }
+    .inci-header{
+        padding: 110px 0 0 0;
+    }
+    .inci-tab-cover{
+        height: 100%;
+        overflow: auto;
+        display: block;
+    }
+    .inci-tab-cover-split-left{
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 50px;
+        overflow: hidden;
+    }
+    .inci-tab-cover-split-right{
+        flex-grow: 0;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 50px;
+        overflow: hidden;
+    }
+    .inci-tab-inp-col{
+        padding: 5px 20px;
+    }
+    .inci-tab-inp-col-box,.inci-tab-inp-col-area{
+        width: 100%;
+    }
+}
+@media screen and (min-width:320px) and (max-width:767px) {
+    .inci-upload-cover{
+        height: fit-content;
+        flex-direction: column;
+    }
+    .inci-tab-cover-split-right{
+        padding-bottom: 150px;
+    }
+    .inci-upload-div-left-init{
+        width: 150px;
+        height: 40px;
+        background-color: #012a2a;
+    }
+    .inci-prev-btn{
+        width: 300px;
+        height: 40px;
+        margin-top: 5px;
+    }
+    .inci-next-btn{
+        width: 300px;
+        height: 40px;
+        margin-top: 5px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .inci-header{
+        padding: 50px 0;
+    }
+    .inci-tab-cover-split-left{
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 80px;
+        overflow: hidden;
+    }
+    .inci-tab-cover-split-right{
+        flex-grow: 0;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 80px;
+        overflow: hidden;
+    }
+}
+@media screen and (min-width:1024px) and (max-width:1439px){
+    .inci-dashboard-tab{
+        padding: 120px 15% 0 15%;
+    }
+    .inci-tab-cover{
+        height: 100%;
+        overflow: auto;
+        display: block;
+    }
+    .inci-tab-cover-split-left{
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 50px;
+        overflow: hidden;
+    }
+    .inci-tab-cover-split-right{
+        flex-grow: 0;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 100px;
+        overflow: hidden;
+    }
+}

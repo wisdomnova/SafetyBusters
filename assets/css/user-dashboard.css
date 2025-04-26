@@ -1,0 +1,515 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    /* background-image: url(https://i.pinimg.com/originals/f8/02/12/f80212a7e085536de54c4e42fe3347d1.jpg); */
+    /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStdfag9LCwwVQXFBYMftdHQbjdjzwjS11cPA&usqp=CAU); */
+    /* background-image: url(https://i.pinimg.com/originals/ff/f7/2e/fff72e95c31d6ded2def7253fc13e9cb.jpg); */
+    /* background-image: url(https://previews.123rf.com/images/scienceboy123rf/scienceboy123rf1801/scienceboy123rf180100040/92683044-abstract-chemical-background-in-grey-and-white-tone-in-concept-of-paper-cut-and-flat-design-.jpg); */
+    /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU8yXKGI1z5IBXw0zQblPI7R4cJs8yOl-gwQ&usqp=CAU); */
+    /* background-image: url(https://img.freepik.com/free-vector/abstract-molecules-soft-grey-background-molecular-structures-chemical-engineering-genetic-research-technological-innovation-scientific-technical-medical-concept_120542-493.jpg?w=2000); */
+    /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSB8booV-Ydt2PJqVFUZXcVgBwbBv82Xb18A&usqp=CAU); */
+    /* background-image: url(https://media.istockphoto.com/vectors/hexagons-gray-bg-vector-id1373203602?k=20&m=1373203602&s=612x612&w=0&h=wmF3LkBipuj7ZuC5OKQrDQDnLMAsJS6Rtvd4oKlDGQ8=); */
+    /* background-image: url(https://img.freepik.com/free-vector/abstract-technology-medical-background-with-hexagons-shape-pattern-concepts-ideas-healthcare-technology-innovation-medicine-health-science-research_120542-564.jpg); */
+    /* background-image: url(https://img.freepik.com/free-vector/abstract-molecular-structure-chemical-elements_120542-153.jpg); */
+    /* background-image: url(https://t4.ftcdn.net/jpg/03/60/90/93/360_F_360909333_tW1Y4oYke49CxjzABlIpIzgHUBQe4Hln.jpg); */
+    /* background-image: url(https://static.vecteezy.com/system/resources/previews/007/455/520/non_2x/geometric-dark-gray-polygonal-background-molecule-and-communication-connected-lines-with-dots-minimalism-background-concept-of-the-science-chemistry-biology-medicine-technology-free-vector.jpg); */
+    background-image: url(../images/nets.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.app-dashboard-cover{
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.app-dashboard-resize{
+    display: none;
+}
+.app-dashboard-tab{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20% 10px 20%;
+    background-color: rgba(0,0,0,0.078);
+    position: relative;
+}
+.app-dashboard-tab-icon-cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 30;
+    padding: 5px 10px; 
+}
+.app-dashboard-tab-icon-cover img{
+    width: 165px;
+    height: 115px;
+}
+.app-dashboard-tab-ham-cover{
+    width: 100px;
+    height: 120px;
+    padding: 0 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 100;
+}
+.app-dashboard-tab-ham-cover:hover .app-dashboard-tab-ham-cover-base{
+    transition: all .3s ease;
+    background-color: #f1f1f1;
+}
+.app-dashboard-tab-ham-cover-base{
+    border-radius: 50%;
+    background-color: #f7f7f7;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    transform: translate(-10%, 10%);
+    transition: all .3s ease;
+}
+.app-dashboard-tab-ham-cover-base-inp{
+    display: none;
+    visibility: hidden;
+}
+.app-dashboard-tab-ham-cover-base-inp:checked + .app-dashboard-tab-ham-cover-stroke-30{
+    opacity: 0;
+}
+.app-dashboard-tab-ham-cover-base-inp:checked ~ .app-dashboard-tab-ham-cover-stroke-50{
+    transform: rotate(45deg) translate(5%,25%);
+}
+.app-dashboard-tab-ham-cover-base-inp:checked ~ .app-dashboard-tab-ham-cover-stroke-51{
+    transform: rotate(-45deg) translate(15%,-135%);
+}
+.app-dashboard-tab-ham-cover-stroke{
+    height: 4px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: all 0.5s ease;
+}
+.app-dashboard-tab-ham-cover-stroke-30{
+    width: 40px;
+}
+.app-dashboard-tab-ham-cover-stroke-50,.app-dashboard-tab-ham-cover-stroke-51{
+    width: 60px;
+}
+.app-dashboard-tab-nav-cover-base{
+    width: 30%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    padding-top: 120px;
+}
+.app-dashboard-tab-nav-cover-base-link{
+    width: 90%;
+    text-decoration: none;
+    height: 60px;
+    background-color: rgba(0,0,0,0.078);
+    margin: 10px 0;
+    line-height: -0.5em;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+    transition: all .3s ease;
+}
+.app-dashboard-tab-nav-cover-base-link-arr{
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    color: #585858;
+}
+.app-dashboard-tab-nav-cover-base-link:hover{
+    opacity: 0.7;
+    transition: all .3s ease;
+    width: 85%;
+}
+.app-dashboard-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+.app-dashboard-item-current{
+    height: 40px;
+    width: calc(100%/3);
+    background-color: #025656;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.app-dashboard-item-current span{
+    color: #ffffff;
+}
+.app-dashboard-item-incurrent{
+    height: 100%;
+    width: calc(100%/3);
+    background-color: #fff;
+    border: 1px solid #a8a8a8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.app-dashboard-item-incurrent span{
+    color: #a8a8a8;
+}
+.app-dashboard-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    margin: 50px 0;
+    overflow: hidden;
+    position: relative;
+}
+.app-dashboard-index{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.app-dashboard-inp-parent{
+    width: 100%;
+    height: fit-content;
+    padding: 20px 30px;
+}
+.app-dashboard-inp-parent-second{
+    width: 100%;
+    height: fit-content;
+    padding: 20px 30px;
+}
+.app-dashboard-inp-single{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.app-dashboard-inp-single-sub{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.app-dashboard-inp-single-sub-int{
+    width: 100%;
+    height: fit-content;
+    display: inline;
+    margin-bottom: 10px;
+}
+.app-dashboard-inp-single-sub-img{
+    width: 70px;
+    height: 70px;
+    margin: 10px 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.app-dashboard-inp-single-sub-img:hover{
+    opacity: 0.5;
+    transition: all .3s ease;
+    transform: scale(1.2);
+}
+.app-dashboard-inp-single-sub-span{
+    margin-left: 55px;
+}
+.app-dashboard-inp-single-text{
+    margin: 0 5px;
+}
+.app-dashboard-inp-single-inp{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    padding-left: 20px;
+    margin: 5px 0;
+}
+.app-dashboard-inp-single-check-bar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    margin-top: 10px;
+}
+.app-dashboard-inp-single-check-parent{
+    width: calc(100%/3);
+    height: fit-content;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.app-dashboard-inp-single-check-parent-label{
+    display: flex;
+    flex-direction: row;
+}
+.app-checkbox-true{
+    display: none;
+}
+.app-checkbox-true:checked + .app-checkbox-cover .app-checkbox-item{
+    background-color: #025656;
+}
+.app-checkbox-cover{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #025656;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-checkbox-item{
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.app-dashboard-inp-single-area{
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-left: 20px;
+    margin: 5px 0;
+    resize: none;
+}
+.app-dashboard-btn-tab{
+    padding: 0;
+    width: 50%;
+    height: 40px;
+}
+.app-dashboard-btn{
+    width: 60%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: #025656;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: all .5s ease;
+}
+.app-dashboard-btn:hover{
+    background-color: #016868;
+    transition: all .5s ease;
+}
+.app-dashboard-preview-cover{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+} 
+.app-dashboard-preview-tab{
+    width: 80%;
+    height: 40%;
+    max-height: 50%;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: auto;
+}
+.app-dashboard-preview-tab-row{
+    height: 85%;
+    max-height: 85%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.app-dashboard-preview-tab-left{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.app-dashboard-preview-tab-right{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.app-dashboard-preview-tab-left-top{
+    flex: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.app-dashboard-preview-tab-left-bottom{
+    width: 100%;
+    height: fit-content;
+    max-height: 60%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.app-dashboard-preview-tab-full-image{
+    width: 40px;
+    height: 40px;
+}
+.app-dashboard-preview-tab-rest{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.app-dashboard-preview-tab-rest-left{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.app-dashboard-preview-tab-rest-right{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.app-dashboard-print-init{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    background-color: #025656;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.app-dashboard-print-init:hover{
+    background-color: #016969;
+    transition: all .3s ease;
+}
+@media screen and (max-width:1023px) {
+    .app-dashboard-resize{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 150;
+        position: fixed;
+        background-color: #fff;
+    }
+    .app-dashboard-resize-icon{
+        font-size: 100px;
+        margin-bottom: 10px;
+    }
+    .app-dashboard-tab-ham-cover{
+        transform: scale(0.6);
+    }
+    .app-dashboard-tab-icon-cover{
+        padding: 5px;
+        transform: scale(0.7);
+    }
+    .app-dashboard-tab-nav-cover-base{
+        width: 70%;
+        padding-top: 100px;
+    }
+}
+@media screen and (min-width:320px) and (max-width:767px) {
+    .app-dashboard-tab-nav-cover-base{
+        width: 100%;
+        padding-top: 100px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .app-dashboard-tab-ham-cover{
+        transform: scale(0.7);
+    }
+    .app-dashboard-tab-icon-cover{
+        padding: 5px;
+        transform: scale(0.7);
+    }
+}
+@media screen and (min-width:1024px) and (max-width:1439px){
+    .app-dashboard-tab{
+        padding: 40px 5% 10px 5%;
+    }
+    .app-dashboard-flex{
+        margin: 50px 0 0 0;
+    }
+    .app-dashboard-print-init{
+        position: absolute;
+        right: 0;
+        background-color: #025656;
+        border-radius: 15px 0 0 15px;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    .app-dashboard-tab-ham-cover{
+        transform: scale(0.7);
+    }
+    .app-dashboard-tab-nav-cover-base{
+        width: 40%;
+        padding-top: 100px;
+    }
+    .app-dashboard-tab-icon-cover{
+        padding: 5px;
+        transform: scale(0.7);
+    }
+}
